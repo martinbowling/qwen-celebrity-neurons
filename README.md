@@ -2,6 +2,10 @@
 
 Can you make Qwen3.5-4B identify as a celebrity? This repo tests single neurons, sparse trios, and dense contrastive directions on six public figures.
 
+**Live post:** https://martinbowling.com/the-celebrity-neuron-is-not-a-neuron
+
+**Main audit:** https://github.com/martinbowling/qwen-neuron-audit
+
 This is the focused write-up of the celebrity pilot. The short version:
 
 > Single neurons don’t impersonate celebrities. Contrastive residual directions do — but only for scientist identities in this test. Entertainer/media identities stayed stuck in topic or brand space.
