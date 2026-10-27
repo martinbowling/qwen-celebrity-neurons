@@ -94,7 +94,33 @@ The result is domain-specific:
 - Do not publish raw “I am …” generations as real quotes.
 - The identity claims come with factual contamination; do not deploy this.
 
+## Setup
+
+```bash
+uv venv --python 3.13 .venv
+source .venv/bin/activate
+uv pip install -r requirements.txt
+
+hf download mlx-community/Qwen3.5-4B-MLX-4bit \
+  --local-dir models/Qwen3.5-4B-MLX-4bit
+hf download mlx-community/Qwen3.5-4B-MLX-8bit \
+  --local-dir models/Qwen3.5-4B-MLX-8bit
+```
+
 ## Reproduce
+
+The core result is the specificity matrix:
+
+```bash
+python celebrity_matrix.py
+```
+
+Then the held-out checks:
+
+```bash
+python celebrity_finalists.py
+python celebrity_newton_8bit.py
+```
 
 Scripts:
 
@@ -117,7 +143,7 @@ Results:
 - `results/celebrity_spotcheck.json`
 - `results/celebrity_trios_results.json`
 
-This is enough to stand alone as **`qwen-celebrity-neurons`** if we split it.
+This is the standalone write-up for the **`qwen-celebrity-neurons`** spin-off.
 
 
 ---
